@@ -8,6 +8,6 @@ spec:
  selector:
   app: hotstar
  ports:
-  - port: 9090
+  - port: 9001
     containerPort: 8080
 ...
