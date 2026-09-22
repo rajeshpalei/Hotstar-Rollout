@@ -1,0 +1,40 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+ name: hotstar
+ labels:
+  app: hotstar
+ namespace: hotstar
+spec:
+ replicas: 3
+ selector:
+  matchLabels:
+   app: hotstar
+ 
+ template:
+  metadata:
+   labels:
+    app: hotstar
+  
+  spec:
+   containers:
+    - name: hotstar
+      image: rajeshpalei/hotstar:v1
+
+      ports:
+       - containerPort: 8080
+      
+      resources:
+       requests:
+        cpu: "200m"
+        memory: "124Mi"
+       limits:
+        cpu: "300m"
+        memory: "128Mi"
+  strategy:
+   blueGreen:
+    activeService: hotstar-active
+    previewService: hotstar-preview
+    autoPromotionEnabled: false
+...
+
