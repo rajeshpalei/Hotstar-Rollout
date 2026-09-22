@@ -36,5 +36,3 @@ spec:
     activeService: hotstar-active
     previewService: hotstar-preview
     autoPromotionEnabled: false
-...
-
