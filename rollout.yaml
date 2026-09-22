@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: hotstar
-          image: rajeshpalei/hotstar:memory-leak-v1
+          image: rajeshpalei/hotstar:latest
 
           ports:
             - containerPort: 8080
